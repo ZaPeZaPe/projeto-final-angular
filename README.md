@@ -1,6 +1,6 @@
 # Como executar o projeto:
 
-1. ``cd TO-DO-Api``
+1. ``cd TO-DO-TASK-API``
 2. ``npm i``
 3. Renomeie o arquivo ``.env-example`` para ``.env``
 4. ``npm start``
