@@ -1,0 +1,27 @@
+<div class="h-100 d-flex justify-content-center align-items-center">
+  <form [formGroup]="loginForm">
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput formControlName="password" />
+        </mat-form-field>
+      </div>
+      <div class="col-12">
+        <button
+          class="w-100 btn btn-lg btn-primary"
+          (click)="login()"
+          [disabled]="loginForm.invalid"
+        >
+          Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

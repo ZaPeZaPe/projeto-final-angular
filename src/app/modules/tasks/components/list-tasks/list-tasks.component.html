@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <div class="d-flex justify-content-end">
+    <button
+      mat-fab
+      color="primary"
+      matTooltip="Adicionar Usuário"
+      routerLink="/tasks/create"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="row">
+    <div class="col-3" *ngFor="let task of tasks">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ task.title }}</mat-card-title>
+          <mat-card-subtitle>{{ task.description }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Due Date: <strong>{{ task.due }}</strong>
+          </p>
+          <p>
+            Category:
+            <strong>{{ task.category | mask : "To-Do|In Progress|Canceled|Accepted" }}</strong>
+          </p>
+          <!-- <p>
+            E-mail: <strong>{{ task.email }}</strong>
+          </p>
+          <p>
+            Telefone:
+            <strong>{{ task.phone | mask : "(00) 0 0000-0000" }}</strong>
+          </p>
+          <p>
+            Renda mensal:
+            <strong>{{ task.income | currency : "BRL" }}</strong>
+          </p>
+          <p>
+            Endereço:
+            <strong
+              >{{ task.address.street }}, nº {{ task.address.number }},
+              {{ task.address.complement ?? "" }}
+              {{ task.address.zipCode | mask : "00.000-000" }}.
+              {{ task.address.neighborhood }}, {{ task.address.city }} -
+              {{ task.address.state }}</strong
+            >
+          </p> -->
+        </mat-card-content>
+        <mat-card-actions>
+          <button
+            mat-flat-button
+            color="primary"
+            routerLink="/tasks/edit/{{ task.id }}"
+          >
+            Editar
+          </button>
+          <button mat-flat-button (click)="deleteTask(task.id!)">
+            Excluir
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
